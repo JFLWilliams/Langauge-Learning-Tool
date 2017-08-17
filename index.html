@@ -1,0 +1,92 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>LearnLanguage</title>
+        <meta name="author" content="James Williams"> <!--Set the author -->
+        
+        <link rel="icon" type="image/png" href="img/icon.png" />
+        
+        <link rel="stylesheet" href="css/style.css?v=1.0"> <!--Using a version means it can be cached better by the browser -->
+    </head>
+
+    <body>
+        <div id="menu">
+            <div class="container"> <!--Create a container for the menu. -->
+                <img id="menuIcon" src="img/icon.png" alt="Logo Icon"> 
+                <div class="card">
+                    <input id="inptName" type="text" placeholder="First Name"> <br><br>
+                    <button onclick="newGame(getElementById('inptName').value);">Create</button><!-- Create a new account. -->
+                    <button onclick="loadData(getElementById('inptName').value)">Load</button><!-- Load an Account.-->
+                </div>
+                <p>A user account must exist and have been saved to load, or error. Built by James Williams.</p>
+            </div>
+        </div>
+        
+        <div id="question">
+            <div class="container">
+                <h1>What is this image?</h1>
+                <div class="card">
+                    <input id="userAnswer" type="text" placeholder="My Guess"> <br><br> <!-- Ask the user for their guess, when button clicked etc,.-->
+                    <button onclick="userClickAnswer(getElementById('userAnswer').value);">Answer</button>
+                </div>
+                <p>Built by James Williams.</p>
+            </div>
+        </div>
+        
+        <div id="answer" onclick="this.style.display = 'none'">
+            <h1 id="answerFeedback">Correct, Livre means Book</h1> <!-- Answer feedback. -->
+            <span>Click to remove.</span>
+        </div>
+        
+        <header>
+            <div class="header-Texture">
+                <div class="container">
+                    <img id="logoSide" src="img/icon.png" alt="Logo Icon"> <!-- Show the icon. -->
+                    <h1>Welcome, <span id="userNameDisplay">Username</span>.</h1> <!-- For the users name -->
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <div class="container">
+                <div class="card">
+                    <h1>French</h1> <!-- for each language, show these: -->
+                        <progress id="frenchKnowledge" value="0" max="100"></progress> <!-- A progress bar out of 100. -->
+                        <button onclick="startQuiz(0, 0)">Level One</button> <!-- Each level. language and difficulty being passed in.-->
+                        <button id="frL2" onclick="startQuiz(0, 1)" disabled>Level Two</button> <!--Same for each language, as seen below. -->
+                        <button id="frL3" onclick="startQuiz(0, 2)" disabled>Level Three</button>
+                    <span class="tag-Holder" id="abilityOutput0"><span class="tag good">++Transport</span><span class="tag bad">--Home</span></span>
+                </div>
+                <div class="card">
+                    <h1>Spanish</h1>
+                        <progress id="spanishKnowledge" value="0" max="100"></progress>
+                        <button onclick="startQuiz(1, 0)">Level One</button>
+                        <button id="spL2" onclick="startQuiz(1, 1)" disabled>Level Two</button>
+                        <button id="spL3" onclick="startQuiz(1, 2)" disabled>Level Three</button>
+                    <span class="tag-Holder" id="abilityOutput1"><span class="tag good">++Transport</span><span class="tag bad">--Home</span></span>
+                </div>
+                <div class="card">
+                    <h1>German</h1>
+                        <progress id="germanKnowledge" value="0" max="100"></progress>
+                        <button onclick="startQuiz(2, 0)">Level One</button>
+                        <button id="grL2" onclick="startQuiz(2, 1)" disabled>Level Two</button>
+                        <button id="grL3" onclick="startQuiz(2, 2)" disabled>Level Three</button>
+                    <span class="tag-Holder" id="abilityOutput2"><span class="tag good">++Transport</span><span class="tag bad">--Home</span></span>
+                </div>
+                <div class="card">
+                    <h1>Account Management</h1>
+                    <span>Your saved data is used to create account preferences and provide a simple saving/loading solution. You can manage this below.</span><br><br>
+                    <button style="background-color: #009688; width: calc(33% - 4px);" onclick="saveData()">Save Data</button> <!-- Save or delete the data -->
+                    <button style="background-color: #FF9800; width: 33%;" onclick="removeData()">Delete User Data</button>
+                    <button style="background-color: #F44336; width: 33%;" onclick="removeAllData()">Delete All Data</button>
+                </div>
+                <p>Built by James Williams</p>
+            </div>
+        </main>
+        
+        <script src="js/data.js"></script> <!--By putting it at end we ensure the site loads first, with our imported packages then being loaded, then the code.-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

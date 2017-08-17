@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%; /*Basic body layout */
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+}
+ 
+header {
+    background-image: url(../img/header.gif);
+    background-size: cover; /*Create a nice header. */
+    background-position: center center;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    background: #121212;
+}
+
+.header-Texture {
+    width: 100%;
+    height: 350px; /*Add a texture to the header, to make it look nicer when scaled up.*/
+    background-image: url(../img/texture.png);
+}
+
+.container {
+    width: calc(100% - 30px);
+    max-width: 1280px;
+    margin: 0 auto; /*Create a basic container.*/
+    padding: 15px;
+    box-sizing: padding-box;
+}
+
+.header-Texture .container h1 {
+    color: white;
+    font-weight: 100;
+    font-size: 80px;
+    margin: 0px; /*Simple h1 for the header.*/
+    line-height: 320px;
+    margin-left: 120px;
+    text-transform: capitalize;
+}
+
+main {
+    margin-top: -35px; /* Nice paper effect. */
+}
+
+.card {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    position: relative; /* A card which sub-elements are relative, with a nice paper effect.*/
+    width: calc(100% - 40px);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    text-align: center;
+}
+
+.card h1 {
+    text-align: left;
+    margin: 0px;
+    padding: 10px;
+    font-weight: 100;
+}
+
+button {
+    color: white;
+    background-color: #673AB7;
+    border: 0;
+    padding: 15px; /*Create a nice button layout, with a width of 33%*/
+    margin: 0px;
+    width: 33%;
+    border-radius: 5px;
+	cursor: pointer;
+	
+	transition: background-color 0.5s linear;
+}
+
+button:disabled {
+    background-color: #bcbcbc; /* A effect for when the button is disabled.*/
+}
+
+button:disabled:hover {
+	background-color: #424242; /* if disabled then chaneg to darker */
+	cursor: not-allowed; /* change cursor to blocked. */
+}
+
+button:hover {
+	background-color: #9575CD;
+}
+
+input {
+    background-color: #f5f5f5;
+    width: calc(50% - 50px); /* Create a input with 100% - 50px width.*/
+    border: 0;
+    padding: 15px;
+    margin: 10px;
+}
+
+progress {
+    top: 0px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    position: absolute; /* A propgress bar stuck tot he top of the card.*/
+    height: 5px;
+    -webkit-appearance: none;
+}
+
+::-webkit-progress-value { /* Chaneg the value color.*/
+    background-color: #673AB7;
+}
+
+::-webkit-progress-bar { /* Change the background color.*/
+    background-color: #D1C4E9;
+}
+
+#menu, #question {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-image: url(../img/bg.jpg); /* Set a basic background image for the menu and question since use similar techniques.*/
+    background-size: cover;
+    background-position: center center;
+    position: fixed;
+    color: white;
+    z-index: 10;
+    
+    display: flex; /*Using flexbox since it makes the layout control easier for vertically aligned elements */
+    flex-direction: column;
+    justify-content: center;
+}
+
+#question {
+    z-index: 5;
+    display: none; /*Display on top when needed, but not at start.*/
+}
+
+#menu .container, #question .container {
+    text-align: center;
+    max-width: 600px;
+}
+
+#menu .container .card {
+    color: black; 
+    padding-top: 40px;
+}
+
+.tag {
+    padding: 10px;
+    margin: 5px;
+    min-height: 10px;
+    line-height: 10px;
+    display: inline-block; /* Create a basic tag holder for the elements.*/
+    border-radius: 5px;
+    letter-spacing: 1px;
+    
+    transition: background-color 0.5s linear;
+}
+
+.good {
+    background-color: #C8E6C9; /* A base color for the tag. */
+}
+
+.good:hover {
+    background-color: #4CAF50; /* A hover color for the tag. */
+}
+
+.bad {
+    background-color: #EF9A9A;
+}
+
+.bad:hover {
+    background-color: #F44336;
+}
+
+.tag-Holder {
+    top: 18px;
+    right: 10px; /* Our tag holder is to the top right of our cards. */
+    position: absolute;
+}
+
+#answer {
+    display: none;
+    z-index: 15;
+    position: fixed;
+    width: 100%;
+    background-color: #673AB7; 
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%); /* Display in middle. */
+    
+    color: white;
+    text-align: center;
+}
+
+#answer h1 {
+    font-size: 60px;
+    font-weight: 100;
+}
+
+#logoSide {
+    max-height: 120px;
+    position: absolute;
+    left: 15px; /* Our side logo. */
+    top:115px;
+}
+
+#menuIcon {
+    width: 120px;
+    position: absolute;
+    z-index: 12; /* Our menu logo. */
+    margin-left: -60px;
+    margin-top: -60px;
+}
